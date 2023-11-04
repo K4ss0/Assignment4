@@ -1,7 +1,6 @@
 package Main;
 
 public class Student {
-	//Student POJO
 	private String studentID;
 	private String studentName;
 	private String course;
@@ -46,4 +45,5 @@ public class Student {
 		this.grade = grade;
 	}
 	
+
 }
