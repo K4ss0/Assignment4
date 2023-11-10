@@ -12,6 +12,13 @@ public class Student {
 		this.course = course;
 		this.grade = grade;
 	}
+	@Override
+	public String toString() {
+		return studentID + ", " +
+				studentName + ", " +
+				course + ", " +
+				grade;
+	}
 
 	public String getStudentID() {
 		return studentID;
