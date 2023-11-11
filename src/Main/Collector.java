@@ -10,9 +10,9 @@ public class Collector {
 
 	String filePath = "StudentData";
 	Student[] students = readStudentDataFromFile(filePath);
-	Student[] compSciStudents = new Student[100];
-	Student[] statStudents = new Student[100];
-	Student[] apmthStudents = new Student[100];
+	Student[] compSciStudents = new Student[34];
+	Student[] statStudents = new Student[33];
+	Student[] apmthStudents = new Student[33];
 	
 	public static Student[] readStudentDataFromFile(String filePath) {
 		Student[] students = new Student[100];
@@ -47,7 +47,7 @@ public class Collector {
 		Arrays.sort(sortedStudents, new Comparator<Student>() {
 			@Override
 			public int compare(Student student1, Student student2) {
-				return student1.getGrade().compareTo(student2.getGrade());
+				return student2.getGrade().compareTo(student1.getGrade());
 			}
 		});
 		
@@ -65,11 +65,11 @@ public class Collector {
 			if(student != null) {
 			String currentCourse = student.getCourse();
 			
-			if ("COMPSCI".equals(currentCourse)) {
+			if (currentCourse.contains("COMPSCI")) {
 				compSciStudents[compSciCount++] = student;
-			} else if ("STAT".equals(currentCourse)) {
+			} else if (currentCourse.contains("STAT")) {
 				statStudents[statCount++] =student;
-			} else if ("APMTH".equals(currentCourse)) {
+			} else if (currentCourse.contains("APMTH")) {
 				apmthStudents[apmthCount++] = student;
 			}
 		

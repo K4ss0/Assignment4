@@ -27,9 +27,12 @@ public class Service {
 		writeToFile(collector.apmthStudents, apmthFile);
 		}
 	}
-	private static void writeToFile(Student[] compScistudents, String fileName) {
+	private static void writeToFile(Student[] students, String fileName) {
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))){
-			for (Student student : compScistudents) {
+			writer.write("Student ID, Student Name, Course, Grade");
+			writer.newLine();
+			
+			for (Student student : students) {
 				writer.write(student.toString());
 				writer.newLine();
 			}
